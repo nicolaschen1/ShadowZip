@@ -1,0 +1,21 @@
+c:\users\helios\documents\visual studio 2015\Projects\ShadowZip\ShadowZip\bin\Debug\ShadowZip.exe.config
+C:\Users\helios\Documents\Visual Studio 2015\Projects\ShadowZip\ShadowZip\bin\Debug\ShadowZip.exe
+C:\Users\helios\Documents\Visual Studio 2015\Projects\ShadowZip\ShadowZip\bin\Debug\ShadowZip.pdb
+C:\Users\helios\Documents\Visual Studio 2015\Projects\ShadowZip\ShadowZip\bin\Debug\Ionic.Zip.dll
+C:\Users\helios\Documents\Visual Studio 2015\Projects\ShadowZip\ShadowZip\obj\Debug\ShadowZip.Form1.resources
+C:\Users\helios\Documents\Visual Studio 2015\Projects\ShadowZip\ShadowZip\obj\Debug\ShadowZip.Properties.Resources.resources
+C:\Users\helios\Documents\Visual Studio 2015\Projects\ShadowZip\ShadowZip\obj\Debug\ShadowZip.csproj.GenerateResource.Cache
+C:\Users\helios\Documents\Visual Studio 2015\Projects\ShadowZip\ShadowZip\obj\Debug\ShadowZip.exe
+C:\Users\helios\Documents\Visual Studio 2015\Projects\ShadowZip\ShadowZip\obj\Debug\ShadowZip.pdb
+C:\Users\helios\Documents\Visual Studio 2015\Projects\ShadowZip\ShadowZip\bin\Debug\Ionic.ZLib.dll
+C:\Users\helios\documents\visual studio 2015\Projects\ShadowZip\ShadowZip\obj\Debug\ShadowZip.csprojResolveAssemblyReference.cache
+C:\Users\helios\Desktop\BUREAU_HERE\LES_PLANS\PLAN_TECH\INFORMATIQUE\STRATEGIE_INFO\GITHUB_HERE\TOUS_MES_PROJETS_INFOS_HERE\CSHARP\SHADOWZIP_HERE\ShadowZip\ShadowZip\ShadowZip\bin\Debug\ShadowZip.exe.config
+C:\Users\helios\Desktop\BUREAU_HERE\LES_PLANS\PLAN_TECH\INFORMATIQUE\STRATEGIE_INFO\GITHUB_HERE\TOUS_MES_PROJETS_INFOS_HERE\CSHARP\SHADOWZIP_HERE\ShadowZip\ShadowZip\ShadowZip\obj\Debug\ShadowZip.exe
+C:\Users\helios\Desktop\BUREAU_HERE\LES_PLANS\PLAN_TECH\INFORMATIQUE\STRATEGIE_INFO\GITHUB_HERE\TOUS_MES_PROJETS_INFOS_HERE\CSHARP\SHADOWZIP_HERE\ShadowZip\ShadowZip\ShadowZip\obj\Debug\ShadowZip.pdb
+C:\Users\helios\Desktop\BUREAU_HERE\LES_PLANS\PLAN_TECH\INFORMATIQUE\STRATEGIE_INFO\GITHUB_HERE\TOUS_MES_PROJETS_INFOS_HERE\CSHARP\SHADOWZIP_HERE\ShadowZip\ShadowZip\ShadowZip\bin\Debug\ShadowZip.exe
+C:\Users\helios\Desktop\BUREAU_HERE\LES_PLANS\PLAN_TECH\INFORMATIQUE\STRATEGIE_INFO\GITHUB_HERE\TOUS_MES_PROJETS_INFOS_HERE\CSHARP\SHADOWZIP_HERE\ShadowZip\ShadowZip\ShadowZip\bin\Debug\ShadowZip.pdb
+C:\Users\helios\Desktop\BUREAU_HERE\LES_PLANS\PLAN_TECH\INFORMATIQUE\STRATEGIE_INFO\GITHUB_HERE\TOUS_MES_PROJETS_INFOS_HERE\CSHARP\SHADOWZIP_HERE\ShadowZip\ShadowZip\ShadowZip\bin\Debug\Ionic.Zip.dll
+C:\Users\helios\Desktop\BUREAU_HERE\LES_PLANS\PLAN_TECH\INFORMATIQUE\STRATEGIE_INFO\GITHUB_HERE\TOUS_MES_PROJETS_INFOS_HERE\CSHARP\SHADOWZIP_HERE\ShadowZip\ShadowZip\ShadowZip\bin\Debug\Ionic.ZLib.dll
+C:\Users\helios\Desktop\BUREAU_HERE\LES_PLANS\PLAN_TECH\INFORMATIQUE\STRATEGIE_INFO\GITHUB_HERE\TOUS_MES_PROJETS_INFOS_HERE\CSHARP\SHADOWZIP_HERE\ShadowZip\ShadowZip\ShadowZip\obj\Debug\ShadowZip.Form1.resources
+C:\Users\helios\Desktop\BUREAU_HERE\LES_PLANS\PLAN_TECH\INFORMATIQUE\STRATEGIE_INFO\GITHUB_HERE\TOUS_MES_PROJETS_INFOS_HERE\CSHARP\SHADOWZIP_HERE\ShadowZip\ShadowZip\ShadowZip\obj\Debug\ShadowZip.Properties.Resources.resources
+C:\Users\helios\Desktop\BUREAU_HERE\LES_PLANS\PLAN_TECH\INFORMATIQUE\STRATEGIE_INFO\GITHUB_HERE\TOUS_MES_PROJETS_INFOS_HERE\CSHARP\SHADOWZIP_HERE\ShadowZip\ShadowZip\ShadowZip\obj\Debug\ShadowZip.csproj.GenerateResource.Cache
