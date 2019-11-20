@@ -1,6 +1,6 @@
 ﻿/*
 SHADOWZIP
-VERSION: 1.0
+VERSION: 2.0
 
 Inputs: Files
 
