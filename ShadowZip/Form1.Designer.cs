@@ -45,11 +45,16 @@
             this.DestinationTextBox = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButtonUnZip = new System.Windows.Forms.RadioButton();
+            this.radioButtonZip = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.ZipTextBox = new System.Windows.Forms.TextBox();
             this.IsPassword = new System.Windows.Forms.CheckBox();
             this.ShadowZipButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelZipFile = new System.Windows.Forms.Label();
+            this.ShadowUnZipButton = new System.Windows.Forms.Button();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,7 +67,7 @@
             // 
             // BrowserTextBox
             // 
-            this.BrowserTextBox.Location = new System.Drawing.Point(14, 50);
+            this.BrowserTextBox.Location = new System.Drawing.Point(14, 66);
             this.BrowserTextBox.Name = "BrowserTextBox";
             this.BrowserTextBox.Size = new System.Drawing.Size(189, 20);
             this.BrowserTextBox.TabIndex = 0;
@@ -70,7 +75,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 34);
+            this.label1.Location = new System.Drawing.Point(11, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 1;
@@ -79,7 +84,7 @@
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(216, 47);
+            this.button1.Location = new System.Drawing.Point(216, 63);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 23);
             this.button1.TabIndex = 2;
@@ -100,7 +105,7 @@
             // SelectedFileList
             // 
             this.SelectedFileList.FormattingEnabled = true;
-            this.SelectedFileList.Location = new System.Drawing.Point(14, 83);
+            this.SelectedFileList.Location = new System.Drawing.Point(14, 99);
             this.SelectedFileList.Name = "SelectedFileList";
             this.SelectedFileList.Size = new System.Drawing.Size(230, 95);
             this.SelectedFileList.TabIndex = 4;
@@ -127,17 +132,19 @@
             // 
             // clearAllToolStripMenuItem
             // 
+            this.clearAllToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clearAllToolStripMenuItem.Image")));
             this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
             this.clearAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clearAllToolStripMenuItem.Text = "Clear all";
             this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
+            this.quitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quitToolStripMenuItem.Image")));
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -152,22 +159,24 @@
             // 
             // instructionsToolStripMenuItem
             // 
+            this.instructionsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("instructionsToolStripMenuItem.Image")));
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.instructionsToolStripMenuItem.Text = "Instructions";
             this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // button3
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(14, 194);
+            this.button3.Location = new System.Drawing.Point(14, 210);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(230, 23);
             this.button3.TabIndex = 6;
@@ -196,6 +205,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButtonUnZip);
+            this.groupBox1.Controls.Add(this.radioButtonZip);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button1);
@@ -210,6 +221,30 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Configuration";
+            // 
+            // radioButtonUnZip
+            // 
+            this.radioButtonUnZip.AutoSize = true;
+            this.radioButtonUnZip.Location = new System.Drawing.Point(159, 19);
+            this.radioButtonUnZip.Name = "radioButtonUnZip";
+            this.radioButtonUnZip.Size = new System.Drawing.Size(81, 17);
+            this.radioButtonUnZip.TabIndex = 17;
+            this.radioButtonUnZip.Text = "UnZipMode";
+            this.radioButtonUnZip.UseVisualStyleBackColor = true;
+            this.radioButtonUnZip.CheckedChanged += new System.EventHandler(this.radioButtonUnZip_CheckedChanged);
+            // 
+            // radioButtonZip
+            // 
+            this.radioButtonZip.AutoSize = true;
+            this.radioButtonZip.Checked = true;
+            this.radioButtonZip.Location = new System.Drawing.Point(14, 19);
+            this.radioButtonZip.Name = "radioButtonZip";
+            this.radioButtonZip.Size = new System.Drawing.Size(67, 17);
+            this.radioButtonZip.TabIndex = 16;
+            this.radioButtonZip.TabStop = true;
+            this.radioButtonZip.Text = "ZipMode";
+            this.radioButtonZip.UseVisualStyleBackColor = true;
+            this.radioButtonZip.CheckedChanged += new System.EventHandler(this.radioButtonZip_CheckedChanged);
             // 
             // label4
             // 
@@ -241,9 +276,9 @@
             // ShadowZipButton
             // 
             this.ShadowZipButton.Image = ((System.Drawing.Image)(resources.GetObject("ShadowZipButton.Image")));
-            this.ShadowZipButton.Location = new System.Drawing.Point(24, 154);
+            this.ShadowZipButton.Location = new System.Drawing.Point(14, 169);
             this.ShadowZipButton.Name = "ShadowZipButton";
-            this.ShadowZipButton.Size = new System.Drawing.Size(191, 129);
+            this.ShadowZipButton.Size = new System.Drawing.Size(100, 89);
             this.ShadowZipButton.TabIndex = 11;
             this.ShadowZipButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ShadowZipButton.UseVisualStyleBackColor = true;
@@ -251,6 +286,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.labelZipFile);
+            this.groupBox2.Controls.Add(this.ShadowUnZipButton);
             this.groupBox2.Controls.Add(this.PasswordTextBox);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.ZipTextBox);
@@ -263,6 +301,37 @@
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ZipPassword";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(132, 265);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 18);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Unzip File";
+            // 
+            // labelZipFile
+            // 
+            this.labelZipFile.AutoSize = true;
+            this.labelZipFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelZipFile.Location = new System.Drawing.Point(34, 265);
+            this.labelZipFile.Name = "labelZipFile";
+            this.labelZipFile.Size = new System.Drawing.Size(63, 18);
+            this.labelZipFile.TabIndex = 18;
+            this.labelZipFile.Text = "Zip File";
+            // 
+            // ShadowUnZipButton
+            // 
+            this.ShadowUnZipButton.Enabled = false;
+            this.ShadowUnZipButton.Image = ((System.Drawing.Image)(resources.GetObject("ShadowUnZipButton.Image")));
+            this.ShadowUnZipButton.Location = new System.Drawing.Point(128, 169);
+            this.ShadowUnZipButton.Name = "ShadowUnZipButton";
+            this.ShadowUnZipButton.Size = new System.Drawing.Size(96, 91);
+            this.ShadowUnZipButton.TabIndex = 17;
+            this.ShadowUnZipButton.UseVisualStyleBackColor = true;
+            this.ShadowUnZipButton.Click += new System.EventHandler(this.ShadowUnZipButton_Click);
             // 
             // PasswordTextBox
             // 
@@ -310,6 +379,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShadowZip";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -350,6 +420,11 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.RadioButton radioButtonUnZip;
+        private System.Windows.Forms.RadioButton radioButtonZip;
+        private System.Windows.Forms.Button ShadowUnZipButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelZipFile;
     }
 }
 

@@ -16,6 +16,8 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Ionic.Zip;
 using System.Text;
+using System.IO;
+using System.Threading;
 
 namespace ShadowZip
 {
@@ -29,11 +31,25 @@ namespace ShadowZip
 
         public Form1()
         {
+            Thread t = new Thread(new ThreadStart(Splash));
+            t.Start();
+            Thread.Sleep(3000);
             InitializeComponent();
-        }      
+            t.Abort();
+        }
 
-		/*** BUTTONS ***/
-		//File Dialog Button
+        public void Splash()
+        {
+            SplashScreen.SplashForm frm = new SplashScreen.SplashForm();
+            frm.AppName = "ShadowZip";
+            frm.Icon = Properties.Resources.zip;
+            frm.ShowIcon = true;
+            frm.ShowInTaskbar = true;
+            Application.Run(frm);
+        }
+
+        /*** BUTTONS ***/
+        //File Dialog Button
         private void button1_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -44,13 +60,13 @@ namespace ShadowZip
                 SelectedFileList.Items.Add(openFileDialog1.FileName);
             }
         }
-		
-		//Button to delete an item
+
+        //Button to delete an item
         private void button3_Click(object sender, EventArgs e)
         {
             SelectedFileList.Items.RemoveAt(SelectedFileList.SelectedIndex);
         }
-		
+
         //Folder Browser Dialog Button for the destination location
         private void button4_Click(object sender, EventArgs e)
         {
@@ -80,8 +96,8 @@ namespace ShadowZip
                     Reset();
                 }
                 else
-                {                    
-                    MessageBox.Show("ZIP FAILED.", "Fail", MessageBoxButtons.OK, 
+                {
+                    MessageBox.Show("ZIP FAILED.", "Fail", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 }
             }
@@ -91,8 +107,8 @@ namespace ShadowZip
                 listSelectedFile.Clear();
             }
         }
-		
-		/*** MENU BAR ***/
+
+        /*** MENU BAR ***/
         private void clearAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Reset();
@@ -100,7 +116,7 @@ namespace ShadowZip
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();            
+            this.Close();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,7 +125,7 @@ namespace ShadowZip
             {
                 "ShadowZip"
                 , ""
-                , "VERSION: 1.0"
+                , "VERSION: 2.0"
                 , ""
                 , "Developed by Nicolas Chen"
             };
@@ -119,11 +135,12 @@ namespace ShadowZip
 
         private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string[] instructions = new string[] 
+            string[] instructions = new string[]
             {
                 "SHADOWZIP is a software tool allows to make a ZIP file (archiving and data compression). "
                 , ""
-                , "1) Select your file. If there are several files, add these files one by one. "
+                , "ZIP MODE:"
+                , "1) Select your file. If there are several files, add these files one by one."
                 , ""
                 , "2) Select your destination location."
                 , ""
@@ -138,17 +155,31 @@ namespace ShadowZip
                 , "b) Type your password (password is hidden by '*' and limited to 14 characters)."
                 , ""
                 , "c) Click on the padlock to assign your password."
+                , ""
+                , "UNZIP MODE"
+                , "1) Select your Zip file. If there are several files, add these files one by one."
+                , ""
+                , "2) Select your destination location."
+                , ""
+                , "3) Click on the UNZIP button."
             };
 
             MessageBoxMultiLines(instructions);
         }
-		
-		
-		/*** METHODS ***/
+
+
+        /*** METHODS ***/
         //Verify if all textboxes are filled
         public bool VerifyTextBox(String BrowserTextBox, String PasswordTextBox, String ZipTextBox, String DestinationTextBox)
         {
-            return !(String.IsNullOrEmpty(BrowserTextBox) || (String.IsNullOrEmpty(PasswordTextBox) && IsPassword.Checked) || String.IsNullOrEmpty(ZipTextBox) || String.IsNullOrEmpty(DestinationTextBox));
+            if (radioButtonZip.Enabled && !radioButtonUnZip.Enabled)
+            {
+                return !(String.IsNullOrEmpty(BrowserTextBox) || (String.IsNullOrEmpty(PasswordTextBox) && IsPassword.Checked) || String.IsNullOrEmpty(ZipTextBox) || String.IsNullOrEmpty(DestinationTextBox));
+            }
+            else
+            {
+                return !(String.IsNullOrEmpty(BrowserTextBox) || (String.IsNullOrEmpty(PasswordTextBox) && IsPassword.Checked) || String.IsNullOrEmpty(DestinationTextBox));
+            }            
         }
 
         //Reset all
@@ -218,8 +249,8 @@ namespace ShadowZip
                 AddPasswordButton.Enabled = false;
             }
         }
-		
-		public void MessageBoxMultiLines(IEnumerable<string> lines)
+
+        public void MessageBoxMultiLines(IEnumerable<string> lines)
         {
             var instructionLine = new StringBuilder();
             bool firstLine = false;
@@ -227,11 +258,95 @@ namespace ShadowZip
             {
                 if (firstLine)
                     instructionLine.Append(Environment.NewLine);
-                
-                instructionLine.Append(line);               
+
+                instructionLine.Append(line);
                 firstLine = true;
             }
             MessageBox.Show(instructionLine.ToString(), "Information");
+        }
+
+        private void radioButtonZip_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonZip.Checked)
+            {
+                ShadowZipButton.Enabled = true;
+                ShadowUnZipButton.Enabled = false;
+            }
+            else
+            {
+                ShadowZipButton.Enabled = false;
+                ShadowUnZipButton.Enabled = true;
+            }
+        }
+
+        private void radioButtonUnZip_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonUnZip.Checked)
+            {
+                ShadowZipButton.Enabled = false;
+                ShadowUnZipButton.Enabled = true;
+                ZipTextBox.Enabled = false;
+                PasswordTextBox.Enabled = false;
+                IsPassword.Enabled = false;
+            }
+            else
+            {
+                ShadowZipButton.Enabled = true;
+                ShadowUnZipButton.Enabled = false;
+                ZipTextBox.Enabled = true;
+                PasswordTextBox.Enabled = true;
+                IsPassword.Enabled = true;
+            }
+        }
+
+        private void ShadowUnZipButton_Click(object sender, EventArgs e)
+        {
+            foreach (object item in SelectedFileList.Items)
+                listSelectedFile.Add(item.ToString());
+
+            zipDestinationPath = DestinationTextBox.Text;
+            zipName = ZipTextBox.Text;
+            string pathZipName = BrowserTextBox.Text;
+
+            if (VerifyTextBox(BrowserTextBox.Text, PasswordTextBox.Text, ZipTextBox.Text, DestinationTextBox.Text))
+            {
+                zipStatus = RunShadowUnZip(listSelectedFile, zipPassword, zipDestinationPath, zipName);
+
+                if (zipStatus == true)
+                {
+                    MessageBox.Show("ZIP COMPLETED.", "Success");
+                    Reset();
+                }
+                else
+                {
+                    MessageBox.Show("ZIP FAILED.", "Fail", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the blanks.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                listSelectedFile.Clear();
+            }
+        }
+
+        //Make the UNZIP file
+        public static bool RunShadowUnZip(List<string> listSelectedFile, string zipPassword, string DestinationPath, string ZipName)
+        {
+            if (listSelectedFile != null)
+            {
+                    foreach (var sFile in listSelectedFile)
+                    {
+                        using (ZipFile shadowZip = new ZipFile(sFile))
+                        {
+                            shadowZip.Password = zipPassword;
+                            shadowZip.ExtractAll(DestinationPath);
+                        }                       
+                    }  
+                    return true;                
+            }
+            else
+                return false;
         }
     }
 }
