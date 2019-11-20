@@ -7,7 +7,6 @@ ShadowZip is a software application that allows you to quickly compress or decom
 ![image1](https://github.com/nicolaschen1/ShadowZip/blob/master/screenshots/shadow1.PNG)
 ![image2](https://github.com/nicolaschen1/ShadowZip/blob/master/screenshots/shadow2.PNG)
 ![image3](https://github.com/nicolaschen1/ShadowZip/blob/master/screenshots/shadow3.PNG)
-![image4](https://github.com/nicolaschen1/ShadowZip/blob/master/screenshots/shadow4.PNG)
 
 ## Author
 Nicolas Chen
