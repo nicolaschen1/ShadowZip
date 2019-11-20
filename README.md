@@ -1,7 +1,7 @@
 # ShadowZip
 
 ## Description
-ShadowZip is a software application that allows you to quickly compress files, protect them with a password, manage them and share them.
+ShadowZip is a software application that allows you to quickly compress or decompress files, protect them with a password, manage them and share them.
 
 ## Screenshots
 ![image1](https://github.com/nicolaschen1/ShadowZip/blob/master/screenshots/shadow1.PNG)
